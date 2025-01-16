@@ -38,6 +38,7 @@ io.on('connection', (socket) => {
       title: 'notification app',
       body: 'transformer voltage is 300v',
       img: '',
+      url:'/data',
       action: 'open', 
     }
     // Emit an event to all clients
