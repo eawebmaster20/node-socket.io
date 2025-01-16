@@ -34,8 +34,13 @@ io.on('connection', (socket) => {
   // Listen to events
   socket.on('message', (msg) => {
     console.log('Message received:', msg);
+    const payload = {
+      name: 'notification app',
+      action: 'open', 
+      info: 'transformer voltage is 300v'
+    }
     // Emit an event to all clients
-    io.emit('message', `Server received: ${msg}`);
+    io.emit('message', payload);
   });
 
   socket.on('disconnect', () => {
