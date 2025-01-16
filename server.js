@@ -36,10 +36,10 @@ io.on('connection', (socket) => {
     console.log('Message received:', msg);
     const payload = {
       title: 'notification app',
-      body: 'transformer voltage is 300v',
+      description: 'transformer voltage is 300v',
       img: '',
-      url:'/data',
-      action: 'open', 
+      time: new Date().toISOString(),
+      status: 'warning', 
     }
     // Emit an event to all clients
     io.emit('message', payload);
