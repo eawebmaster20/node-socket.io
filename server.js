@@ -9,14 +9,19 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({
+  origin: true, // Allow all origins
+  methods: ['GET', 'POST'], // Allowed methods
+  allowedHeaders: ['Content-Type'], // Allowed headers
+  credentials: true, // Allow credentials
+}));
 
 const server = http.createServer(app);
 
 // Configure Socket.IO with CORS
 const io = new Server(server, {
   cors: {
-    origin: 'http://localhost:4201', // Replace with your Angular app's URL
+    origin: true, // Replace with your Angular app's URL
     methods: ['GET', 'POST'],       // Allowed HTTP methods
     allowedHeaders: ['Content-Type'], // Allowed headers
     credentials: true               // Allow cookies and credentials
