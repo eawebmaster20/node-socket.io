@@ -35,8 +35,8 @@ io.on('connection', (socket) => {
   socket.on('message', (msg) => {
     console.log('Message received:', msg);
     const payload = {
-      title: msg.title,
-      description: msg.body,
+      title: msg.title || 'notification app',
+      description: msg.body || 'transformer voltage is 300v',
       img: '',
       time: new Date().toISOString(),
       status: 'warning', 
