@@ -5,7 +5,7 @@ const { Server } = require('socket.io');
 var admin = require("firebase-admin");
 var bodyParser = require('body-parser');
 const { Sequelize } = require('sequelize');
-const sequelizeWithUrl = new Sequelize('postgresql://postgres:YTGBkitMWNMvQFlNaZVgESznGdgmTZzB@node-socketio.railway.internal:5432/railway')
+const sequelizeWithUrl = new Sequelize('postgresql://postgres:YTGBkitMWNMvQFlNaZVgESznGdgmTZzB@junction.proxy.rlwy.net:57163/railway')
 const sequelize = new Sequelize('railway', 'postgres', 'YTGBkitMWNMvQFlNaZVgESznGdgmTZzB', {
   host: 'postgres-gtqw.railway.internal:5432',
   dialect: 'postgres'
