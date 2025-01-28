@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 const { Sequelize } = require('sequelize');
 const sequelizeWithUrl = new Sequelize('postgres://user:pass@example.com:5432/dbname')
 const sequelize = new Sequelize('railway', 'postgres', 'YTGBkitMWNMvQFlNaZVgESznGdgmTZzB', {
-  host: 'node-socketio.railway.internal',
+  host: 'postgres-gtqw.railway.internal:',
   dialect: 'postgres'
 });
 
