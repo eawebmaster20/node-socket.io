@@ -10,12 +10,7 @@ const sequelize = new Sequelize('railway', 'postgres', 'YTGBkitMWNMvQFlNaZVgESzn
   host: 'postgres-gtqw.railway.internal',
   dialect: 'postgres'
 });
-try {
-  await sequelize.authenticate();
-  console.log('Connection has been established successfully.');
-} catch (error) {
-  console.error('Unable to connect to the database:', error);
-}
+
 const PORT = process.env.PORT || 3000;
 const app = express();
 app.use(bodyParser.urlencoded());
@@ -68,6 +63,14 @@ app.get('/', (req, res)=>{
 // server.listen(PORT, () => {
 //   console.log(`Socket.IO server is running on port ${PORT}`);
 // });
+async function startSequelize(){
+  try {
+    await sequelize.authenticate();
+    console.log('Connection has been established successfully.');
+  } catch (error) {
+    console.error('Unable to connect to the database:', error);
+  }
+}
 app.listen(PORT, () => {
   console.log(`server started on port ${PORT}`);
 })
