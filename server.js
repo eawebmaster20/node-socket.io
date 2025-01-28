@@ -16,6 +16,9 @@ app.use(cors({
   credentials: true, // Allow credentials
 }));
 
+app.get('/', (req, res)=>{
+  res.json('server is working so, Hola!');
+})
 // const server = http.createServer(app);
 
 // // Configure Socket.IO with CORS
