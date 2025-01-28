@@ -5,7 +5,7 @@ const { Server } = require('socket.io');
 var admin = require("firebase-admin");
 var bodyParser = require('body-parser');
 const { Sequelize } = require('sequelize');
-const sequelizeWithUrl = new Sequelize('junction.proxy.rlwy.net:57163')
+const sequelizeWithUrl = new Sequelize('postgresql://postgres:YTGBkitMWNMvQFlNaZVgESznGdgmTZzB@junction.proxy.rlwy.net:57163/railway')
 const sequelize = new Sequelize('railway', 'postgres', 'YTGBkitMWNMvQFlNaZVgESznGdgmTZzB', {
   host: 'postgres-gtqw.railway.internal:5432',
   dialect: 'postgres'
@@ -64,7 +64,7 @@ app.get('/', (req, res)=>{
 //   console.log(`Socket.IO server is running on port ${PORT}`);
 // });
 async function startSequelize(){
-  console.log(process.env);
+  // console.log(process.env);
   try {
     await sequelizeWithUrl.authenticate();
     console.log('Connection has been established successfully.');
