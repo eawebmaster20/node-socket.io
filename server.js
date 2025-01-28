@@ -6,8 +6,8 @@ var admin = require("firebase-admin");
 var bodyParser = require('body-parser');
 const { Sequelize } = require('sequelize');
 const sequelizeWithUrl = new Sequelize('postgres://user:pass@example.com:5432/dbname')
-const sequelize = new Sequelize('railway', 'postgres', 'YTGBkitMWNMvQFlNaZVgESznGdgmTZzB', {
-  host: 'postgres-gtqw.railway.internal',
+const sequelize = new Sequelize('db', 'user', 'postgres_password', {
+  host: 'your host',
   dialect: 'postgres'
 });
 const PORT = process.env.PORT || 3000;
