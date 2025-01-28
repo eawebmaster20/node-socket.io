@@ -71,6 +71,8 @@ async function startSequelize(){
     console.error('Unable to connect to the database:', error);
   }
 }
+
+startSequelize();
 app.listen(PORT, () => {
   console.log(`server started on port ${PORT}`);
 })
