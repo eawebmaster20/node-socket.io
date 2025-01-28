@@ -5,7 +5,7 @@ const { Server } = require('socket.io');
 var admin = require("firebase-admin");
 var bodyParser = require('body-parser');
 const { Sequelize } = require('sequelize');
-const sequelizeWithUrl = new Sequelize('postgres://user:pass@example.com:5432/dbname')
+const sequelizeWithUrl = new Sequelize('junction.proxy.rlwy.net:57163')
 const sequelize = new Sequelize('railway', 'postgres', 'YTGBkitMWNMvQFlNaZVgESznGdgmTZzB', {
   host: 'postgres-gtqw.railway.internal:5432',
   dialect: 'postgres'
@@ -66,7 +66,7 @@ app.get('/', (req, res)=>{
 async function startSequelize(){
   console.log(process.env);
   try {
-    await sequelize.authenticate();
+    await sequelizeWithUrl.authenticate();
     console.log('Connection has been established successfully.');
   } catch (error) {
     console.error('Unable to connect to the database:', error);
