@@ -64,6 +64,7 @@ app.get('/', (req, res)=>{
 //   console.log(`Socket.IO server is running on port ${PORT}`);
 // });
 async function startSequelize(){
+  console.log(process.env);
   try {
     await sequelize.authenticate();
     console.log('Connection has been established successfully.');
