@@ -10,6 +10,12 @@ const sequelize = new Sequelize('railway', 'postgres', 'YTGBkitMWNMvQFlNaZVgESzn
   host: 'postgres-gtqw.railway.internal',
   dialect: 'postgres'
 });
+try {
+  await sequelize.authenticate();
+  console.log('Connection has been established successfully.');
+} catch (error) {
+  console.error('Unable to connect to the database:', error);
+}
 const PORT = process.env.PORT || 3000;
 const app = express();
 app.use(bodyParser.urlencoded());
