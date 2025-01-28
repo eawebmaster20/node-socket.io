@@ -4,7 +4,12 @@ const cors = require('cors');
 const { Server } = require('socket.io');
 var admin = require("firebase-admin");
 var bodyParser = require('body-parser');
-
+const { Sequelize } = require('sequelize');
+const sequelizeWithUrl = new Sequelize('postgres://user:pass@example.com:5432/dbname')
+const sequelize = new Sequelize('railway', 'postgres', 'YTGBkitMWNMvQFlNaZVgESznGdgmTZzB', {
+  host: 'postgres-gtqw.railway.internal',
+  dialect: 'postgres'
+});
 const PORT = process.env.PORT || 3000;
 const app = express();
 app.use(bodyParser.urlencoded());
