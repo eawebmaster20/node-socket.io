@@ -17,6 +17,7 @@ app.use(cors({
 }));
 
 app.post('api/login', (req, res)=>{
+  console.log('api call recieved');
   res.status(200).json({
     status:'success'
   })
