@@ -20,13 +20,13 @@ app.get('/', (req, res) => {
   res.json({ message: 'Welcome to Munday Review!' });
 }) 
 
-app.get('api', (req, res)=>{
+app.get('/api', (req, res)=>{
   console.log('get api call recieved');
   res.send({
     status:'success'
   })
 })
-app.post('api/login', (req, res)=>{
+app.post('/api/login', (req, res)=>{
   console.log('api call recieved');
   res.status(200).json({
     status:'success'
