@@ -16,6 +16,12 @@ app.use(cors({
   credentials: true, // Allow credentials
 }));
 
+app.post('login', (req, res)=>{
+  res.status(200).json({
+    status:'success'
+  })
+})
+
 const server = http.createServer(app);
 
 // Configure Socket.IO with CORS
