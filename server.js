@@ -16,7 +16,7 @@ app.use(cors({
   credentials: true, // Allow credentials
 }));
 
-app.post('login', (req, res)=>{
+app.post('api/login', (req, res)=>{
   res.status(200).json({
     status:'success'
   })
