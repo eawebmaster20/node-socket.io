@@ -15,6 +15,11 @@ app.use(cors({
   allowedHeaders: ['Content-Type'], // Allowed headers
   credentials: true, // Allow credentials
 }));
+
+app.get('/', (req, res) => {
+  res.json({ message: 'Welcome to Munday Review!' });
+}) 
+
 app.get('api', (req, res)=>{
   console.log('get api call recieved');
   res.send({
