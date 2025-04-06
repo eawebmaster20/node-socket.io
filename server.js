@@ -15,7 +15,12 @@ app.use(cors({
   allowedHeaders: ['Content-Type'], // Allowed headers
   credentials: true, // Allow credentials
 }));
-
+app.get('api', (req, res)=>{
+  console.log('get api call recieved');
+  res.send({
+    status:'success'
+  })
+})
 app.post('api/login', (req, res)=>{
   console.log('api call recieved');
   res.status(200).json({
